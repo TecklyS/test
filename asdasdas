@@ -1,0 +1,58 @@
+while _G.FARM do 
+
+local MYLEVEL = game:GetService("Players").LocalPlayer.Data.Level.Value
+
+if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then 
+    print("QUEST")
+
+elseif MYLEVEL == 1 or MYLEVEL <= 13 then 
+
+G.NAMEMON = "Bandit [Lv. 5]"
+
+local args = {
+    [1] = "StartQuest",
+    [2] = "BanditQuest1",
+    [3] = 1
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF:InvokeServer(unpack(args))
+
+else 
+    print ("JungleQuest")
+end
+
+game:GetService("Workspace").Enemies[_G.NAMEMON].HumanoidRootPart.Size = Vector3.new(60,60,60)
+game:GetService("Workspace").Enemies[_G.NAMEMON].HumanoidRootPart.Transparency = 0
+
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Enemies[_G.NAMEMON].HumanoidRootPart.CFrame * CFrame.new(0,0,20)
+
+   game:GetService'VirtualUser':CaptureController()
+game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+
+    wait()
+end
+local MYLEVEL = game:GetService("Players").LocalPlayer.Data.Level.Value
+
+if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then 
+    print("QUEST")
+elseif MYLEVEL == 14 or MYLEVEL <=25 then
+    
+_G.NAMEMON = "Monkey [Lv. 14]"
+
+local args = {
+    [1] = "StartQuest",
+    [2] = "JungleQuest",
+    [3] = 1
+}
+game:GetService("ReplicatedStorage").Remotes.CommF:InvokeServer(unpack(args))
+
+game:GetService("Workspace").Enemies[_G.NAMEMON].HumanoidRootPart.Size = Vector3.new(60,60,60)
+game:GetService("Workspace").Enemies[_G.NAMEMON].HumanoidRootPart.Transparency = 0
+
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Enemies[_G.NAMEMON].HumanoidRootPart.CFrame * CFrame.new(0,0,20)
+
+   game:GetService'VirtualUser':CaptureController()
+game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+
+    wait()
+end
